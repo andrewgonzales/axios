@@ -1,4 +1,3 @@
-/* axios v0.17.1 | (c) 2017 by Matt Zabriskie */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -448,7 +447,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*!
 	 * Determine if an object is a Buffer
 	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @author   Feross Aboukhadijeh <https://feross.org>
 	 * @license  MIT
 	 */
 	
@@ -699,7 +698,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // For IE 8/9 CORS support
 	    // Only supports POST and GET calls and doesn't returns the response headers.
 	    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-	    if (("production") !== 'test' &&
+	    if ((undefined) !== 'test' &&
 	        typeof window !== 'undefined' &&
 	        window.XDomainRequest && !('withCredentials' in request) &&
 	        !isURLSameOrigin(config.url)) {
@@ -985,9 +984,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      if (utils.isArray(val)) {
 	        key = key + '[]';
-	      }
-	
-	      if (!utils.isArray(val)) {
+	      } else {
 	        val = [val];
 	      }
 	
@@ -1225,7 +1222,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      },
 	
 	      read: function read(name) {
-	        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+	        var match = window.parent.document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
 	        return (match ? decodeURIComponent(match[3]) : null);
 	      },
 	
